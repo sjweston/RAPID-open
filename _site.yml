@@ -1,0 +1,8 @@
+name: "RAPID R3"
+navbar:
+  title: "Reports for RAPID R3"
+  
+  right:
+    - icon: fa-github
+      href: https://github.com/sjweston/Rapid-R3-Website
+
