@@ -1,7 +1,47 @@
 name: "RAPID Open"
 navbar:
   title: "Open-ended Questions"
-  
+  left:
+    - text: "Bigram Plots"
+      menu: 
+        - text: "1: What are the biggest challenges and concerns for you and your family right now?" 
+          href: bigram_1.html
+        - text: "2: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
+          href: bigram_2.html
+        - text: "3: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
+          href: bigram_3.html
+        - text: "4: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
+          href: bigram_4.html
+        - text: "5: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
+          href: bigram_5.html
+        - text: "7: What are the resources that you wish you had (or need) in order to support your (older) child?s education?"
+          href: bigram_7.html
+        - text: "8: What are the resources that you wish you had (or need) in order to support your (younger) child?s education?"
+          href: bigram_8.html
+        - text: "9: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
+          href: bigram_9.html
+        - text: "10: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
+          href: bigram_10.html
+    - text: "Response Tables"
+      menu: 
+        - text: "1: What are the biggest challenges and concerns for you and your family right now?" 
+          href: responses_1.html
+        - text: "2: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
+          href: responses_2.html
+        - text: "3: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
+          href: responses_3.html
+        - text: "4: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
+          href: responses_4.html
+        - text: "5: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
+          href: responses_5.html
+        - text: "7: What are the resources that you wish you had (or need) in order to support your (older) child?s education?"
+          href: responses_7.html
+        - text: "8: What are the resources that you wish you had (or need) in order to support your (younger) child?s education?"
+          href: responses_8.html
+        - text: "9: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
+          href: responses_9.html
+        - text: "10: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
+          href: responses_10.html        
   right:
     - icon: fa-github
       href: https://github.com/sjweston/Rapid-open
