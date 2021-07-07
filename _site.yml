@@ -1,8 +1,8 @@
-name: "RAPID R3"
+name: "RAPID Open"
 navbar:
-  title: "Reports for RAPID R3"
+  title: "Open-ended Questions"
   
   right:
     - icon: fa-github
-      href: https://github.com/sjweston/Rapid-R3-Website
+      href: https://github.com/sjweston/Rapid-open
 

@@ -1,5 +1,5 @@
 ---
-title: "RAPID R3"
+title: "RAPID Open-ended Questions"
 output: 
   html_document:
     toc: TRUE
@@ -7,21 +7,9 @@ output:
     theme: paper
 ---
 
-We must begin to hear directly from parents about what they need.
+This site contains responses to the open-ended questions collected as part of the project called Rapid Assessment of Pandemic Impact on Development in Early Childhood (RAPID-EC), launched by the [University of Oregon’s Center for Translational Neuroscience](https://ctn.uoregon.edu/).
 
-Specifically, we need actionable, high quality scientific data, gathered from those with young children in their care, that will allow federal, state, and local policy makers to make the best use of resources.
-
-To this end, the [University of Oregon’s Center for Translational Neuroscience](https://ctn.uoregon.edu/) has launched a project called Rapid Assessment of Pandemic Impact on Development in Early Childhood (RAPID-EC).
-Essential to the project’s impact are strong partnerships with a number of visionary organizations, including:
-
-- Private philanthropic foundations to support the work.
-- Early childhood family-focused organizations with large online networks of parents and other caregivers, who can help us recruit geographically and demographically diverse households.
-- Early childhood advocacy and policy organizations, who will provide input into the content of the questions we ask and serve as mobilization channels for the reports we generate.
-
-In designing RAPID-EC, we quickly recognized a need to collect data at very frequent intervals, because both the evolution of the pandemic and the federal and state responses to it have been difficult to predict.
-
-As such, surveys will be conducted on a weekly basis.
-We further recognized the need for large nationally representative samples for each weekly survey. These representative samples will allow us to not only make statements about the overall well-being of households with young children in the US, but also to examine specific subgroups based on characteristics like household income, race and ethnicity, and region of the country. 
+Click through to find both summaries of the major themes, as well as direct responses from participants. 
 
 Read more about our study [here](https://medium.com/rapid-ec-project). 
 
