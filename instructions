@@ -1,0 +1,11 @@
+
+INSTRUCTIONS FOR UPDATING THE RAPID-OPEN WEBSITE.
+
+1. Open GitHub Desktop. Click "Fetch Origin" to ensure you have the most recent version of the scripts. 
+2. Copy the Masterfile_Groupings_2021.sav file from the Dropbox into the data folder in the RAPID-open project directory. 
+3. Open and run the _RUNME.R script. This may take 5-10 minutes, so get a cup of coffee. 
+4. If there are new open-ended questions, add them to the _site.yml file (in both the bigram and responses section).
+5. Under the Build tab in RStudio, click Build Website. 
+6. In GitHub Desktop, write something in the Summary box. Click "Commit to main", then click "Push origin".
+
+You're done!
