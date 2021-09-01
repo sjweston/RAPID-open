@@ -36,8 +36,8 @@ response_table = master %>%
                DEMO.004.a.2 >= 1 ~ "Yes",
                !is.na(DEMO.004.a.2) ~ "No",
                TRUE ~ NA_character_)) %>%
-    select(CaregiverID, Week, 
-           starts_with("OPEN"), 
+    select(CaregiverID, Week, starts_with("OPEN"),COVID.007, COVID.008, CTAX.008, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, HEALTH.024, HEALTH.030, 
+           JOB.030, MH.013, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, WKFORCE.011,
            State, FPL.2019.UM.150, 
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
@@ -49,15 +49,18 @@ response_table = master %>%
     select(-OPEN.006) %>%
     rename(`Below 1.5xFPL` = FPL.2019.UM.150,
            `Child 0-3` = child_age03) %>%
-    gather("Question", "Response", starts_with("OPEN")) %>%
+    gather("Question", "Response", starts_with("OPEN"), COVID.007, COVID.008, CTAX.008, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, HEALTH.024, HEALTH.030, 
+           JOB.030, MH.013, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, WKFORCE.011) %>%
     filter(Response != "") 
 
 
-questions = master %>% select(starts_with("OPEN")) %>% select(-OPEN.006)
+questions = master %>% select(starts_with("OPEN"), COVID.007, COVID.008, CTAX.008, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, HEALTH.024, HEALTH.030, 
+                              JOB.030, MH.013, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, WKFORCE.011) %>% select(-OPEN.006)
 q_text = sjlabelled::get_label(questions)
 q_names = names(questions)
-q_nums = as.numeric(str_remove(q_names, "OPEN."))
-rm(questions)
+#q_nums = as.numeric(str_remove(q_names, "OPEN."))
+q_nums = seq(1, 31)
+#rm(questions)
 
 # loop bigram  ------------------------------------------------------------
 

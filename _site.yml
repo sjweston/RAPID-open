@@ -4,44 +4,195 @@ navbar:
   left:
     - text: "Bigram Plots"
       menu: 
-        - text: "1: What are the biggest challenges and concerns for you and your family right now?" 
+        - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
           href: bigram_1.html
-        - text: "2: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
+
+        - text: "OPEN.002: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
           href: bigram_2.html
-        - text: "3: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
+
+        - text: "OPEN.003: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
           href: bigram_3.html
-        - text: "4: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
+
+        - text: "OPEN.004: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
           href: bigram_4.html
-        - text: "5: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
+
+        - text: "OPEN.005: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
           href: bigram_5.html
-        - text: "7: What are the resources that you wish you had (or need) in order to support your (older) child?s education?"
+
+        - text: "OPEN.007: What are the resources that you wish you had (or need) in order to support your (older) child's education?"
+          href: bigram_6.html
+
+        - text: "OPEN.008: What are the resources that you wish you had (or need) in order to support your (younger) child's education?"
           href: bigram_7.html
-        - text: "8: What are the resources that you wish you had (or need) in order to support your (younger) child?s education?"
+
+        - text: "OPEN.009: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
           href: bigram_8.html
-        - text: "9: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
+
+        - text: "OPEN.010: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
           href: bigram_9.html
-        - text: "10: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
+
+        - text: "COVID.007: Please tell us how the death or hospitalization of someone you know due to COVID-19 affected you personally" 
           href: bigram_10.html
+
+        - text: "COVID.008: Please tell us how the death or hospitalization of someone you know due to COVID-19 affected your child."                                                                                                                                                                                                                                                                                                               
+          href: bigram_11.html
+
+        - text: "CTAX.008: How would receiving the $250 or $300 monthly payment for each child in your family for the next six months affect you and your family?"                                                                                                                                                                                                                                                                                         
+          href: bigram_12.html
+
+        - text: "DEBT.005. When you don't have enough money to pay all your bills, how do you decide which bills to pay?"                                                                                                                                                                                                                                                           
+          href: bigram_13.html
+
+        - text: "DEBT.006: What would you like your policymakers to know about your debt, including the debt you've accrued during the pandemic?"                                                                                                                                                                                                                                                
+          href: bigram_14.html
+
+        - text: "FamCon.016: What's the most important thing you have done for your children?"                                                                                                                                                                                                                                                
+          href: bigram_15.html
+
+        - text: "FamCon.017: Currently, is there anything that is helping you reduce conflict with your spouse/partner?"
+          href: bigram_16.html
+
+        - text: "FamCon.018: Currently, is there anything that is helping you reduce conflict with your child/children?"
+          href: bigram_17.html
+
+        - text: "HEALTH.024: Do you have any concerns about receiving the COVID-19 vaccine?"                                                                                                                                                                     
+          href: bigram_18.html
+
+        - text: "HEALTH.030: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness, and what are your plans in terms of whether or not to get it?"  
+          href: bigram_19.html
+
+        - text: "JOB.030: Has the pandemic affected how stable your financial situation is an, if so, please tell us in what ways it has changed?" 
+          href: bigram_20.html
+
+        - text: "MH.013: Is there anything else you would like to share about your concern about eviction or foreclosure?"                                                                                                                                                                                                                                                                                                               
+          href: bigram_21.html
+
+        - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
+          href: bigram_22.html
+
+        - text: "PREG.028: Thinking back to the first six months of your baby's life, what was the biggest challenge you faced? We are interested in as much detail as you care to share."                                                                                                                                                                                                                                                           
+          href: bigram_23.html
+
+        - text: "PREG.029: How do you think the COVID-19 pandemic impacted your experience of pregnancy and having a newborn?"                                                                                                                                                                                                                                                
+          href: bigram_24.html
+
+        - text: "PREG.038: If yes (personally experienced racism, racial discrimination, or racial prejudice), what happened during your pregnancy? We are interested in as much detail as you care to share."                                                                                                                                                                                                                                                
+          href: bigram_25.html
+
+        - text: "PREG.040: If yes (personally experienced racism, racial discrimination, or racial prejudice), what happened during your labor and delivery? We are interested in as much detail as you care to share."
+          href: bigram_26.html
+
+        - text: "STIM.001.d: (If receive the first federal stimulus check) In what ways was the first federal stimulus check in 2020 helpful? "
+          href: bigram_27.html
+
+        - text: "STIM.002.d: (If receive the second federal stimulus check) In what ways was the second federal stimulus check in winter 2020-2021, helpful? "                                                                                                                                                                     
+          href: bigram_28.html
+
+        - text: "STIM.004.d: (If receive the unemployment bonus) In what ways was the 600 unemployment bonus/benefit from related to COVID-19 helpful? "  
+          href: bigram_29.html
+
+        - text: "STIM.003.d: (If receive the third federal stimulus check) In what ways was the third federal stimulus check from March 2021 helpful?  "  
+          href: bigram_30.html
+
+
+        - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
+          href: bigram_31.html
+
+
     - text: "Response Tables"
       menu: 
-        - text: "1: What are the biggest challenges and concerns for you and your family right now?" 
+        - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
           href: responses_1.html
-        - text: "2: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
+
+        - text: "OPEN.002: What is helping you and your family the most right now?"                                                                                                                                                                                                                                                                                                               
           href: responses_2.html
-        - text: "3: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
+
+        - text: "OPEN.003: What is on your mind the most when you think about your community re-opening?"                                                                                                                                                                                                                                                                                         
           href: responses_3.html
-        - text: "4: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
+
+        - text: "OPEN.004: What concerns do you have about your place of employment and/or your child's child care setting re-opening?"                                                                                                                                                                                                                                                           
           href: responses_4.html
-        - text: "5: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
+
+        - text: "OPEN.005: Is there anything else you would like to tell us about you and your family's experiences during the COVID-19 pandemic?"                                                                                                                                                                                                                                                
           href: responses_5.html
-        - text: "7: What are the resources that you wish you had (or need) in order to support your (older) child?s education?"
+
+        - text: "OPEN.007: What are the resources that you wish you had (or need) in order to support your (older) child's education?"
+          href: responses_6.html
+
+        - text: "OPEN.008: What are the resources that you wish you had (or need) in order to support your (younger) child's education?"
           href: responses_7.html
-        - text: "8: What are the resources that you wish you had (or need) in order to support your (younger) child?s education?"
+
+        - text: "OPEN.009: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
           href: responses_8.html
-        - text: "9: What would you like your elected officials or other policymakers to know about how your family is doing or what you need during this time?"                                                                                                                                                                     
+
+        - text: "OPEN.010: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
           href: responses_9.html
-        - text: "10: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
-          href: responses_10.html        
+
+        - text: "COVID.007: Please tell us how the death or hospitalization of someone you know due to COVID-19 affected you personally" 
+          href: responses_10.html
+
+        - text: "COVID.008: Please tell us how the death or hospitalization of someone you know due to COVID-19 affected your child."                                                                                                                                                                                                                                                                                                               
+          href: responses_11.html
+
+        - text: "CTAX.008: How would receiving the $250 or $300 monthly payment for each child in your family for the next six months affect you and your family?"                                                                                                                                                                                                                                                                                         
+          href: responses_12.html
+
+        - text: "DEBT.005. When you don't have enough money to pay all your bills, how do you decide which bills to pay?"                                                                                                                                                                                                                                                           
+          href: responses_13.html
+
+        - text: "DEBT.006: What would you like your policymakers to know about your debt, including the debt you've accrued during the pandemic?"                                                                                                                                                                                                                                                
+          href: responses_14.html
+
+        - text: "FamCon.016: What's the most important thing you have done for your children?"                                                                                                                                                                                                                                                
+          href: responses_15.html
+
+        - text: "FamCon.017: Currently, is there anything that is helping you reduce conflict with your spouse/partner?"
+          href: responses_16.html
+
+        - text: "FamCon.018: Currently, is there anything that is helping you reduce conflict with your child/children?"
+          href: responses_17.html
+
+        - text: "HEALTH.024: Do you have any concerns about receiving the COVID-19 vaccine?"                                                                                                                                                                     
+          href: responses_18.html
+
+        - text: "HEALTH.030: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness, and what are your plans in terms of whether or not to get it?"  
+          href: responses_19.html
+
+        - text: "JOB.030: Has the pandemic affected how stable your financial situation is an, if so, please tell us in what ways it has changed?" 
+          href: responses_20.html
+
+        - text: "MH.013: Is there anything else you would like to share about your concern about eviction or foreclosure?"                                                                                                                                                                                                                                                                                                               
+          href: responses_21.html
+
+        - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
+          href: responses_22.html
+
+        - text: "PREG.028: Thinking back to the first six months of your baby's life, what was the biggest challenge you faced? We are interested in as much detail as you care to share."                                                                                                                                                                                                                                                           
+          href: responses_23.html
+
+        - text: "PREG.029: How do you think the COVID-19 pandemic impacted your experience of pregnancy and having a newborn?"                                                                                                                                                                                                                                                
+          href: responses_24.html
+
+        - text: "PREG.038: If yes (personally experienced racism, racial discrimination, or racial prejudice), what happened during your pregnancy? We are interested in as much detail as you care to share."                                                                                                                                                                                                                                                
+          href: responses_25.html
+
+        - text: "PREG.040: If yes (personally experienced racism, racial discrimination, or racial prejudice), what happened during your labor and delivery? We are interested in as much detail as you care to share."
+          href: responses_26.html
+
+        - text: "STIM.001.d: (If receive the first federal stimulus check) In what ways was the first federal stimulus check in 2020 helpful? "
+          href: responses_27.html
+
+        - text: "STIM.002.d: (If receive the second federal stimulus check) In what ways was the second federal stimulus check in winter 2020-2021, helpful? "                                                                                                                                                                     
+          href: responses_28.html
+
+        - text: "STIM.004.d: (If receive the unemployment bonus) In what ways was the 600 unemployment bonus/benefit from related to COVID-19 helpful? "  
+          href: responses_29.html
+
+        - text: "STIM.003.d: (If receive the third federal stimulus check) In what ways was the third federal stimulus check from March 2021 helpful?  "  
+          href: responses_30.html
+
+        - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
+          href: responses_31.html
   right:
     - icon: fa-github
       href: https://github.com/sjweston/Rapid-open
