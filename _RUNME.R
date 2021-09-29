@@ -5,6 +5,7 @@ library(here) # for finding files easier
 library(haven) # for importing sav files
 library(tidyverse) # for data cleaning
 library(zoo) # additional data cleaning tools
+library(dplyr)
 
 # load data ---------------------------------------------------------------
 
@@ -27,10 +28,14 @@ names(ZipCodes) = c("CountryCode", "zip", "PlaceName",
                     "AdminName1", "State", "AdminName2", "AdminCode2", 
                     "AdminName3", "AdminCode3", "latitude", "longitude", "accuracy")
 ZipCodes$zip = as.character(ZipCodes$zip)
+ZipCodes_r <- ZipCodes %>%
+    mutate (zip = case_when (nchar(zip) == 5 ~ zip, 
+                             nchar(zip) == 4 ~ paste("0",zip,sep = ""),
+                             nchar(zip) == 3 ~ paste("00",zip,sep = "")))
 
 response_table = master %>%
     rename(zip = DEMO.001) %>%
-    left_join(select(ZipCodes, zip, State)) %>%
+    left_join(select(ZipCodes_r, zip, State)) %>%
     filter(UserLanguage == "EN") %>%
     mutate(child_age03 = case_when(
                DEMO.004.a.2 >= 1 ~ "Yes",
