@@ -1,0 +1,63 @@
+---
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+params: 
+  title: "RAPID CC Open ended Challenges"
+  question: "What are the biggest challenges and concerns for you and your family right now?"
+  variable: "OPEN.001"
+  data: response_table
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.kable.NA = '')
+```
+
+```{r open-1-1}
+library(here)
+library(haven)
+library(tidyverse)
+library(zoo)
+library(DT)
+library(tidytext)
+library(igraph)
+library(ggraph)
+```
+
+**Question:** `r params$question`
+
+```{r open-1-6}
+bigrams <- cc_response_table %>%
+  filter(Question == params$variable) %>%
+  filter(Response != "")%>%
+  filter(grepl(params$variable, Question)) %>%
+  unnest_tokens(bigram, Response, token = "ngrams", n = 2)
+  
+  bigrams <- bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ")
+  
+  bigrams <- bigrams %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word) %>%
+    filter(!is.na(word1)) %>%
+    filter(!is.na(word2))
+  
+  bigram_counts <- bigrams %>% 
+  count(word1, word2, sort = TRUE)
+  
+  filter_num = ifelse(str_detect(params$variable, "1"), 
+                      quantile(bigram_counts$n, c(.99))[[1]],
+                      quantile(bigram_counts$n, c(.95))[[1]])
+
+  bigram_graph <- bigram_counts %>%
+  filter(n >= filter_num) %>%
+  graph_from_data_frame()
+  
+  ggraph(bigram_graph, layout = "dh") +
+  geom_edge_link(alpha = .2) +
+  geom_node_point(alpha = .3) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1, size = 2)
+```
+

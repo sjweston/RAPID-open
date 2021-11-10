@@ -1,0 +1,39 @@
+---
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+params: 
+  title: "Open ended Challenges"
+  question: "What are the biggest challenges and concerns for you and your family right now?"
+  variable: "OPEN.001"
+  data: response_table
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.kable.NA = '')
+```
+
+```{r open-1-1}
+library(here)
+library(haven)
+library(tidyverse)
+library(zoo)
+library(DT)
+library(tidytext)
+library(igraph)
+library(ggraph)
+```
+
+**Question:** `r params$question`
+
+```{r open-1-5, results = 'asis'}
+cc_response_table %>%
+  filter(Question == params$variable) %>%
+  select(-Question) %>%
+  datatable(filter = "top", rownames = F, 
+            options = list(autoWidth = T))
+```
+
+
