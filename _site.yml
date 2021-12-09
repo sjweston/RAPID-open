@@ -110,6 +110,9 @@ navbar:
           - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
             href: ec_bigram_25.html
 
+	 - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
+            href: ec_bigram_38.html
+
         - text: "Pregnancy module"
           menu:
 
@@ -152,6 +155,18 @@ navbar:
 
           - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
             href: ec_bigram_36.html
+
+	- text: "Special Needs module"
+          menu:
+
+          - text: "NEEDS.007: What additional services and/or supports would meet your child(ren)'s needs?  " 
+            href: ec_bigram_37.html
+
+	- text: "WIC module"
+          menu:
+
+          - text: "WIC.009: Please provide details on how, if at all, your purchasing habits changed due to the increased fruit and vegetable benefit.  " 
+            href: ec_bigram_39.html
 
 
     - text: "Household Response Tables"
@@ -256,12 +271,14 @@ navbar:
           - text: "MH.014: What would you like policymakers to know about evictions and foreclosures?"                                                                                                                                                                                                                                                                                                               
             href: ec_responses_24.html
 
-
-        - text: "Policy and childcare module"
+         - text: "Policy & childcare module"
           menu:
 
           - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
             href: ec_responses_25.html
+
+	 - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
+            href: ec_responses_38.html
 
         - text: "Pregnancy module"
           menu:
@@ -306,6 +323,18 @@ navbar:
 
           - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
             href: ec_responses_36.html
+
+	- text: "Special Needs module"
+          menu:
+
+          - text: "NEEDS.007: What additional services and/or supports would meet your child(ren)'s needs?  " 
+            href: ec_responses_37.html
+
+	- text: "WIC module"
+          menu:
+
+          - text: "WIC.009: Please provide details on how, if at all, your purchasing habits changed due to the increased fruit and vegetable benefit.  " 
+            href: ec_responses_39.html
 
 
     - text: "Provider Bigram Plots"

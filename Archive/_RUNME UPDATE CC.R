@@ -39,22 +39,20 @@ ZipCodes_r <- ZipCodes %>%
 ec_response_table = ec_master %>%
     rename(zip = DEMO.001) %>%
     left_join(select(ZipCodes_r, zip, State)) %>%
-    #filter(UserLanguage == "EN") %>%
+    filter(UserLanguage == "EN") %>%
     mutate(child_age03 = case_when(
                DEMO.004.a.2 >= 1 ~ "Yes",
                !is.na(DEMO.004.a.2) ~ "No",
-               TRUE ~ NA_character_), 
-           Language = case_when (UserLanguage == "EN" ~ "English", 
-                                 UserLanguage == "SPA" ~ "Spanish")) %>%
+               TRUE ~ NA_character_)) %>%
     select(CaregiverID, Week, starts_with("OPEN"),COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d,STIM.004.d, STIM.005.d, WKFORCE.011,
-           State, FPL.Curr.150, zip, Language,
+           State, FPL.Curr.150, zip,
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
     arrange(Week) %>%
     group_by(CaregiverID) %>%
     mutate_if(is.labelled, as_factor, levels = "labels") %>%
-    mutate_at(vars(State, FPL.Curr.150, RaceGroup, CaregiverAge, child_age03, zip, Language), na.locf0) %>%
+    mutate_at(vars(State, FPL.Curr.150, RaceGroup, CaregiverAge, child_age03, zip), na.locf0) %>%
     ungroup() %>%
     select(-OPEN.006) %>%
     rename(`Below 1.5xFPL` = FPL.Curr.150,
@@ -78,22 +76,20 @@ ec_q_nums = seq(1, 36)
 cc_response_table = cc_master %>%
     rename(zip = CC.DEMO.001) %>%
     left_join(select(ZipCodes_r, zip, State)) %>%
-   # filter(UserLanguage == "EN") %>%
+    filter(UserLanguage == "EN") %>%
     mutate (provider_type = case_when (CC.DEMO.013_1 == 1 ~ "Center teacher", 
                                        CC.DEMO.013_2 == 1 ~ "Center director",
                                        CC.DEMO.013_3 == 1 | CC.DEMO.013_4 == 1|CC.DEMO.013_8 ==1 | CC.DEMO.013_12 == 1| CC.DEMO.013_9 ==1 | CC.DEMO.013_13 == 1  ~ "Home-based provider", 
                                        CC.DEMO.013_5 == 1 ~ "FFN", 
-                                       CC.DEMO.013_6 == 1|CC.DEMO.013_10 == 1 | CC.DEMO.013_11 == 1 ~ "Babysitter/nanny"), 
-            Language = case_when (UserLanguage == "EN" ~ "English", 
-                                  UserLanguage == "SPA" ~ "Spanish")) %>%
+                                       CC.DEMO.013_6 == 1|CC.DEMO.013_10 == 1 | CC.DEMO.013_11 == 1 ~ "Babysitter/nanny"))%>%
     select(ProviderID, Week, starts_with("CC.OPEN"), CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1, 
-           State, FPL.CURR.150, zip, RaceGroup, provider_type, Language) %>%
+           State, FPL.CURR.150, zip, RaceGroup, provider_type) %>%
     filter(CC.OPEN.007 == 1) %>%
     arrange(Week) %>%
     group_by(ProviderID) %>%
     mutate_if(is.labelled, as_factor, levels = "labels") %>%
-    mutate_at(vars(State, FPL.CURR.150, zip, RaceGroup, provider_type, Language), na.locf0) %>%
+    mutate_at(vars(State, FPL.CURR.150, zip, RaceGroup, provider_type), na.locf0) %>%
     ungroup() %>%
     select(-CC.OPEN.007) %>%
     rename(`Below 1.5xFPL` = FPL.CURR.150) %>%
