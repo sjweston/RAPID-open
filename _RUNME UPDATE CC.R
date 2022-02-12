@@ -11,9 +11,10 @@ library(dplyr)
 
 master_2020 <- read_sav(here("data/MasterFile_groupings_2020.sav"))
 master_2021 <- read_sav(here("data/MasterFile_groupings_2021.sav"))
+master_2022 <- read_sav(here("data/MasterFile_groupings_2022.sav"))
 cc_master <- read_sav(here("data/CC.MasterFile_groupings.sav"))
 
-ec_master <- full_join (master_2020, master_2021)
+ec_master <- full_join(full_join (master_2020, master_2021), master_2022)
 rm(master_2020, master_2021)
 
 
@@ -46,8 +47,10 @@ ec_response_table = ec_master %>%
                TRUE ~ NA_character_), 
            Language = case_when (UserLanguage == "EN" ~ "English", 
                                  UserLanguage == "SPA" ~ "Spanish")) %>%
-    select(CaregiverID, Week, starts_with("OPEN"),COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
-           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d,STIM.004.d, STIM.005.d, WKFORCE.011,
+    select(CaregiverID, Week, OPEN.001, OPEN.002, OPEN.003, OPEN.004, OPEN.005, OPEN.006, OPEN.007, OPEN.008, OPEN.009, OPEN.010,
+           COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
+           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d,STIM.004.d, STIM.005.d, WKFORCE.011, 
+           OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
            State, FPL.Curr.150, zip, Language,
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
@@ -59,19 +62,23 @@ ec_response_table = ec_master %>%
     select(-OPEN.006) %>%
     rename(`Below 1.5xFPL` = FPL.Curr.150,
            `Child 0-3` = child_age03) %>%
-    gather("Question", "Response", starts_with("OPEN"), COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
-           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d, WKFORCE.011) %>%
+    gather("Question", "Response", OPEN.001, OPEN.002, OPEN.003, OPEN.004, OPEN.005, OPEN.007, OPEN.008, OPEN.009, OPEN.010,
+           COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
+           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d, WKFORCE.011,
+           OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022) %>%
     filter(Response != "") 
 
 
 ec_questions = ec_master %>% 
-    select(starts_with("OPEN"), COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
-           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d,  WKFORCE.011) %>% 
+    select(OPEN.001, OPEN.002, OPEN.003, OPEN.004, OPEN.005, OPEN.007, OPEN.008, OPEN.009, OPEN.010,
+           COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
+           HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d,  WKFORCE.011,
+           OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022) %>% 
     select(-OPEN.006)
 ec_q_text = sjlabelled::get_label(ec_questions)
 ec_q_names = names(ec_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-ec_q_nums = seq(1, 36)
+ec_q_nums = seq(1, 41)
 #rm(questions)
 
 ## Matching cc data with zipcode and clean 
@@ -88,15 +95,15 @@ cc_response_table = cc_master %>%
                                   UserLanguage == "SPA" ~ "Spanish")) %>%
     select(ProviderID, Week, starts_with("CC.OPEN"), CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1, 
-           State, FPL.CURR.150, zip, RaceGroup, provider_type, Language) %>%
+           State, FPL.2019.150, zip, RaceGroup, provider_type, Language) %>%
     filter(CC.OPEN.007 == 1) %>%
     arrange(Week) %>%
     group_by(ProviderID) %>%
     mutate_if(is.labelled, as_factor, levels = "labels") %>%
-    mutate_at(vars(State, FPL.CURR.150, zip, RaceGroup, provider_type, Language), na.locf0) %>%
+    mutate_at(vars(State, FPL.2019.150, zip, RaceGroup, provider_type, Language), na.locf0) %>%
     ungroup() %>%
     select(-CC.OPEN.007) %>%
-    rename(`Below 1.5xFPL` = FPL.CURR.150) %>%
+    rename(`Below 1.5xFPL` = FPL.2019.150) %>%
     gather("Question", "Response", starts_with("CC.OPEN"), CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1) %>%
     filter(Response != "") 

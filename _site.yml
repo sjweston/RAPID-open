@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Household Bigram Plots"
       menu: 
-        - text: "Open-ended 1-10 questions"
+        - text: "Open-ended 1-11 questions"
           menu:
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
             href: ec_bigram_1.html
@@ -33,6 +33,10 @@ navbar:
           - text: "OPEN.010: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
             href: ec_bigram_9.html
 
+          - text: "OPEN.011: Is there anything else you would like to share"  
+            href: ec_bigram_37.html
+
+
         - text: "COVID module"
           menu:
 
@@ -50,6 +54,9 @@ navbar:
 
           - text: "CTAX.016: To what extent has the Child Tax Credit affected your financial situation and how?"                                                                                                                                                                                                                                                                                         
             href: ec_bigram_13.html
+
+          - text: "CTAX.022: How would it impact your family's financial situation if Congress decides not to continue the monthly Child Tax Credit payments?"                                                                                                                                                                                                                                                                                         
+            href: ec_bigram_41.html
           
 
         - text: "Debt module"
@@ -110,7 +117,7 @@ navbar:
           - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
             href: ec_bigram_25.html
 
-	 - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
+          - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
             href: ec_bigram_38.html
 
         - text: "Pregnancy module"
@@ -156,22 +163,22 @@ navbar:
           - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
             href: ec_bigram_36.html
 
-	- text: "Special Needs module"
+        - text: "Special Needs module"
           menu:
 
           - text: "NEEDS.007: What additional services and/or supports would meet your child(ren)'s needs?  " 
-            href: ec_bigram_37.html
+            href: ec_bigram_39.html
 
-	- text: "WIC module"
+        - text: "WIC module"
           menu:
 
           - text: "WIC.009: Please provide details on how, if at all, your purchasing habits changed due to the increased fruit and vegetable benefit.  " 
-            href: ec_bigram_39.html
+            href: ec_bigram_40.html
 
 
     - text: "Household Response Tables"
       menu: 
-        - text: "Open-ended 1-10 questions"
+        - text: "Open-ended 1-11 questions"
           menu:
 
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
@@ -201,6 +208,10 @@ navbar:
           - text: "OPEN.010: What would you like your employer to know about what families need during this next phase of the COVID-19 pandemic and recovery period?"  
             href: ec_responses_9.html
 
+          - text: "OPEN.011: Is there anything else you would like to share"  
+            href: ec_responses_37.html
+
+
         - text: "COVID module"
           menu:
 
@@ -218,6 +229,9 @@ navbar:
 
           - text: "CTAX.016: To what extent has the Child Tax Credit affected your financial situation and how?"                                                                                                                                                                                                                                                                                         
             href: ec_responses_13.html
+
+          - text: "CTAX.022: How would it impact your family's financial situation if Congress decides not to continue the monthly Child Tax Credit payments?"                                                                                                                                                                                                                                                                                         
+            href: ec_responses_41.html
 
         - text: "Debt module"
           menu:
@@ -271,13 +285,13 @@ navbar:
           - text: "MH.014: What would you like policymakers to know about evictions and foreclosures?"                                                                                                                                                                                                                                                                                                               
             href: ec_responses_24.html
 
-         - text: "Policy & childcare module"
+        - text: "Policy & childcare module"
           menu:
 
           - text: "POLICY.030: When thinking about the people/center that provides your childcare right now, what role, significant contribution or niche do they serve for you and your family?"                                                                                                                                                                                                                                                                                         
             href: ec_responses_25.html
 
-	 - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
+          - text: "POLICY.033: How do you think the programs and funds from the American Families Plan will impact families with young children?"                                                                                                                                                                                                                                                                                         
             href: ec_responses_38.html
 
         - text: "Pregnancy module"
@@ -324,17 +338,17 @@ navbar:
           - text: "WKFORCE.011: Please describe any concerns or other thoughts you have about working and parenting during the pandemic.  " 
             href: ec_responses_36.html
 
-	- text: "Special Needs module"
+        - text: "Special Needs module"
           menu:
 
           - text: "NEEDS.007: What additional services and/or supports would meet your child(ren)'s needs?  " 
-            href: ec_responses_37.html
+            href: ec_responses_39.html
 
-	- text: "WIC module"
+        - text: "WIC module"
           menu:
 
           - text: "WIC.009: Please provide details on how, if at all, your purchasing habits changed due to the increased fruit and vegetable benefit.  " 
-            href: ec_responses_39.html
+            href: ec_responses_40.html
 
 
     - text: "Provider Bigram Plots"
