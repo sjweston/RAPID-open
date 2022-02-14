@@ -376,6 +376,16 @@ navbar:
           - text: "CC.OPEN.008: What do you want federal and/or state officials that oversee funding for child care providers to know?" 
             href: cc_bigram_7.html
 
+          - text: "CC.OPEN.009: When thinking about the parent(s) of the child/children that you care for right now, what role do they play in your life?" 
+            href: cc_bigram_28.html
+
+          - text: "CC.OPEN.010: When thinking about the child/children that you care for right now, what role do they play in your life?" 
+            href: cc_bigram_29.html
+
+          - text: "CC.OPEN.011: Has the COVID-19 surge related to Omicron impacted you and your job as a child care provider? If so, please describe how. " 
+            href: cc_bigram_30.html
+
+
         - text: "Child care subsidy module"
           menu:
           - text: "CC.CCS.004: What changes have you made to your program to support children who receive public subsidies?" 
@@ -485,6 +495,15 @@ navbar:
 
           - text: "CC.OPEN.008: What do you want federal and/or state officials that oversee funding for child care providers to know?" 
             href: cc_responses_7.html
+
+          - text: "CC.OPEN.009: When thinking about the parent(s) of the child/children that you care for right now, what role do they play in your life?" 
+            href: cc_responses_28.html
+
+          - text: "CC.OPEN.010: When thinking about the child/children that you care for right now, what role do they play in your life?" 
+            href: cc_responses_29.html
+
+          - text: "CC.OPEN.011: Has the COVID-19 surge related to Omicron impacted you and your job as a child care provider? If so, please describe how. " 
+            href: cc_responses_30.html
 
         - text: "Child care subsidy module"
           menu:
