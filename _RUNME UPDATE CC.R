@@ -51,7 +51,8 @@ ec_response_table = ec_master %>%
            COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d,STIM.004.d, STIM.005.d, WKFORCE.011, 
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022, 
-           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, # NEW VARS
+           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, 
+           CLIM.012, # NEW VARIABLE
            State, FPL.Curr.150, zip, Language,
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
@@ -67,7 +68,7 @@ ec_response_table = ec_master %>%
            COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d, WKFORCE.011,
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
-           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004) %>%
+           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012) %>%
     filter(Response != "") 
 
 
@@ -76,12 +77,12 @@ ec_questions = ec_master %>%
            COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d,  WKFORCE.011,
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
-           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004) %>% 
+           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012) %>% 
     select(-OPEN.006)
 ec_q_text = sjlabelled::get_label(ec_questions)
 ec_q_names = names(ec_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-ec_q_nums = seq(1, 50)
+ec_q_nums = seq(1, 51)
 #rm(questions)
 
 ## Matching cc data with zipcode and clean 
@@ -96,12 +97,13 @@ cc_response_table = cc_master %>%
                                        CC.DEMO.013_6 == 1|CC.DEMO.013_10 == 1 | CC.DEMO.013_11 == 1 ~ "Babysitter/nanny"), 
             Language = case_when (UserLanguage == "EN" ~ "English", 
                                   UserLanguage == "SPA" ~ "Spanish")) %>%
-    select(ProviderID, Week, CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.007, CC.OPEN.008, 
+    select(ProviderID, WEEK, CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.007, CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1, CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
+           CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002,# NEW VARIABLES
            State, FPL.2019.150, zip, RaceGroup, provider_type, Language) %>%
     filter(CC.OPEN.007 == 1) %>%
-    arrange(Week) %>%
+    arrange(WEEK) %>%
     group_by(ProviderID) %>%
     mutate_if(is.labelled, as_factor, levels = "labels") %>%
     mutate_at(vars(State, FPL.2019.150, zip, RaceGroup, provider_type, Language), na.locf0) %>%
@@ -111,7 +113,8 @@ cc_response_table = cc_master %>%
     gather("Question", "Response", CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1,
-           CC.OPEN.009, CC.OPEN.010, CC.OPEN.011) %>%
+           CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
+           CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002) %>%
     filter(Response != "") 
 
 
@@ -119,12 +122,13 @@ cc_questions = cc_master %>%
     select(CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.007,CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
            CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1,
-           CC.OPEN.009, CC.OPEN.010, CC.OPEN.011) %>% 
+           CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
+           CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002) %>% 
     select(-CC.OPEN.007)
 cc_q_text = sjlabelled::get_label(cc_questions)
 cc_q_names = names(cc_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-cc_q_nums = seq(1, 30)
+cc_q_nums = seq(1, 39)
 #rm(questions)
 
 # loop bigram  ------------------------------------------------------------

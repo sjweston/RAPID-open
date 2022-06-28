@@ -76,6 +76,9 @@ navbar:
 
           - text: "CLIM.004. How does the environment around your home (i.e., air quality, proximity to parks, etc.) affect your family?"                                                                                                                                                                                                                                                                                                               
             href: ec_bigram_50.html
+
+          - text: "CLIM.012. Ideally, what do you see your role and responsibility being in regard to supporting your child(ren) through climate change?"                                                                                                                                                                                                                                                                                                               
+            href: ec_bigram_51.html
           
 
         - text: "Debt module"
@@ -289,6 +292,9 @@ navbar:
           - text: "CLIM.004. How does the environment around your home (i.e., air quality, proximity to parks, etc.) affect your family?"                                                                                                                                                                                                                                                                                                               
             href: ec_responses_50.html
 
+          - text: "CLIM.012. Ideally, what do you see your role and responsibility being in regard to supporting your child(ren) through climate change?"                                                                                                                                                                                                                                                                                                               
+            href: ec_responses_51.html
+
 
 
         - text: "Debt module"
@@ -463,6 +469,11 @@ navbar:
           - text: "CC.OPEN.011: Has the COVID-19 surge related to Omicron impacted you and your job as a child care provider? If so, please describe how. " 
             href: cc_bigram_30.html
 
+        - text: "ACCESS module"
+          menu:
+          - text: "CC.Access.002: Do you think you or your program/center have sufficient knowledge, skills, and  resources to provide care for the children with disabilities?" 
+            href: cc_bigram_31.html
+
 
         - text: "Child care subsidy module"
           menu:
@@ -480,6 +491,9 @@ navbar:
 
           - text: "CC.CTAX.016: To what extent has the Child Tax Credit affected your financial situation and how?" 
             href: cc_bigram_11.html
+
+          - text: "CC.CTAX.029: Has your household been affected by not receiving the monthly Child Tax Credit payments in January, February and March? If so, how?"
+            href: cc_bigram_32.html
 
 
         - text: "Debt module"
@@ -502,10 +516,36 @@ navbar:
           - text: "CC.DEBT.006: Currently, is there anything that is helping you reduce conflict with your child/children?" 
             href: cc_bigram_16.html
 
+        - text: "FOOD AID module"
+          menu:
+          - text: "CC.FoodAid.002: Has the pandemic changed the school meals or snacks your center/program provides? If yes, how?" 
+            href: cc_bigram_33.html
+
+          - text: "CC.FoodAid.005: Do you/your center need support to keep providing the school meals or snacks you currently offer? If yes, what support would you need?" 
+            href: cc_bigram_34.html
+
+          - text: "CC.FoodAid.007: What support would you/your center need to start providing school meals or snacks?" 
+            href: cc_bigram_35.html
+
+        - text: "Health module"
+          menu:
+          - text: "CC.HEALTH.039: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness for children under the age of 5?" 
+            href: cc_bigram_36.html
+
+        - text: "Inflation module"
+          menu:
+          - text: "CC.Inflation.004: How has the increased costs of everyday items affected the decisions you make for your household?" 
+            href: cc_bigram_37.html
+
         - text: "Material hardship module"
           menu:
           - text: "CC.MH.013: Is there anything else you would like to share about your concern about eviction or foreclosure?" 
             href: cc_bigram_17.html
+
+        - text: "Provider debt module"
+          menu:
+          - text: "CC.ProvDebt.007: How has debt impacted your wellbeing and the decisions you can make about the future (ex. Changing jobs, family planning, etc.)?" 
+            href: cc_bigram_38.html
 
         - text: "Childcare stabilization fund module"
           menu:
@@ -516,6 +556,8 @@ navbar:
           menu:
           - text: "CC.Staff.009: (If responded yes/maybe leave childcare workforce): Why are you considering leaving your program?" 
             href: cc_bigram_19.html
+
+
 
 
         - text: "Stimulus check module"
@@ -548,6 +590,11 @@ navbar:
 
           - text: "CC.VACC.003.1: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness, and what are your plans in terms of whether or not to get it?"
             href: cc_bigram_27.html
+
+        - text: "Violence module"
+          menu:
+          - text: "CC.Violence.002: Is there anything else you would like to say about this topic?"
+            href: cc_bigram_39.html
 
     - text: "Provider Response Tables"
       menu: 
@@ -583,10 +630,15 @@ navbar:
           - text: "CC.OPEN.011: Has the COVID-19 surge related to Omicron impacted you and your job as a child care provider? If so, please describe how. " 
             href: cc_responses_30.html
 
+        - text: "ACCESS module"
+          menu:
+          - text: "CC.Access.002: Do you think you or your program/center have sufficient knowledge, skills, and  resources to provide care for the children with disabilities?" 
+            href: cc_responses_31.html
+
         - text: "Child care subsidy module"
           menu:
           - text: "CC.CCS.004: What changes have you made to your program to support children who receive public subsidies?" 
-            href: cc_responses.html
+            href: cc_responses_8.html
 
           - text: "CC.CCS.005: How does including government funding support your program?" 
             href: cc_responses_9.html
@@ -599,6 +651,9 @@ navbar:
 
           - text: "CC.CTAX.016: To what extent has the Child Tax Credit affected your financial situation and how?" 
             href: cc_responses_11.html
+
+          - text: "CC.CTAX.029: Has your household been affected by not receiving the monthly Child Tax Credit payments in January, February and March? If so, how? "
+            href: cc_responses_32.html
 
 
         - text: "Debt module"
@@ -621,10 +676,36 @@ navbar:
           - text: "CC.DEBT.006: Currently, is there anything that is helping you reduce conflict with your child/children?" 
             href: cc_responses_16.html
 
+        - text: "FOOD AID module"
+          menu:
+          - text: "CC.FoodAid.002: Has the pandemic changed the school meals or snacks your center/program provides? If yes, how?" 
+            href: cc_responses_33.html
+
+          - text: "CC.FoodAid.005: Do you/your center need support to keep providing the school meals or snacks you currently offer? If yes, what support would you need?" 
+            href: cc_responses_34.html
+
+          - text: "CC.FoodAid.007: What support would you/your center need to start providing school meals or snacks?" 
+            href: cc_responses_35.html
+
+        - text: "Health module"
+          menu:
+          - text: "CC.HEALTH.039: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness for children under the age of 5?" 
+            href: cc_responses_36.html
+
+        - text: "Inflation module"
+          menu:
+          - text: "CC.Inflation.004: How has the increased costs of everyday items affected the decisions you make for your household?" 
+            href: cc_responses_37.html
+
         - text: "Material hardship module"
           menu:
           - text: "CC.MH.013: Is there anything else you would like to share about your concern about eviction or foreclosure?" 
             href: cc_responses_17.html
+
+        - text: "Provider debt module"
+          menu:
+          - text: "CC.ProvDebt.007: How has debt impacted your wellbeing and the decisions you can make about the future (ex. Changing jobs, family planning, etc.)?" 
+            href: cc_responses_38.html
 
         - text: "Childcare stabilization fund module"
           menu:
@@ -667,6 +748,11 @@ navbar:
 
           - text: "CC.VACC.003.1: How do you feel about the COVID-19 vaccine in terms of its safety and effectiveness, and what are your plans in terms of whether or not to get it?"
             href: cc_responses_27.html
+
+        - text: "Violence module"
+          menu:
+          - text: "CC.Violence.002: Is there anything else you would like to say about this topic?"
+            href: cc_responses_39.html
 
   right:
     - icon: fa-github
