@@ -41,7 +41,15 @@ navbar:
 
           - text: "OPEN.013: Has your child(ren) said anything to you about the events that are ocurring in the US and in the world right now? If so, what are they saying?"  
             href: ec_bigram_47.html
+            
+          - text: "OPEN.014:  As a parent, what are the highest priorities for you right now?"  
+            href: ec_bigram_52.html
 
+          - text: "OPEN.015: Are there supports or services that you currently rely on that help you be the kind of parent you most want to be? If so, please describe."  
+            href: ec_bigram_53.html
+            
+          - text: "OPEN.016: Are there additional supports or services that would help you to be the kind of parent you most want to be? If so, please describe."  
+            href: ec_bigram_54.html
 
 
         - text: "COVID module"
@@ -89,6 +97,12 @@ navbar:
 
           - text: "DEBT.006: What would you like your policymakers to know about your debt, including the debt you've accrued during the pandemic?"                                                                                                                                                                                                                                                
             href: ec_bigram_15.html
+
+        - text: "Multigenerational family module"
+          menu:
+
+          - text: "Fam.003: Please describe the caretaking you do for members of your household other than your children."                                                                                                                                                                                                                                                
+            href: ec_bigram_55.html
 
         - text: "Family conflict module"
           menu:
@@ -257,6 +271,15 @@ navbar:
           - text: "OPEN.013: Has your child(ren) said anything to you about the events that are ocurring in the US and in the world right now? If so, what are they saying?"  
             href: ec_responses_47.html
 
+          - text: "OPEN.014:  As a parent, what are the highest priorities for you right now?"  
+            href: ec_responses_52.html
+
+          - text: "OPEN.015: Are there supports or services that you currently rely on that help you be the kind of parent you most want to be? If so, please describe."  
+            href: ec_responses_53.html
+            
+          - text: "OPEN.016: Are there additional supports or services that would help you to be the kind of parent you most want to be? If so, please describe."  
+            href: ec_responses_54.html
+
 
 
         - text: "COVID module"
@@ -305,6 +328,12 @@ navbar:
 
           - text: "DEBT.006: What would you like your policymakers to know about your debt, including the debt you've accrued during the pandemic?"                                                                                                                                                                                                                                                
             href: ec_responses_15.html
+
+        - text: "Multigenerational family module"
+          menu:
+
+          - text: "Fam.003: Please describe the caretaking you do for members of your household other than your children."                                                                                                                                                                                                                                                
+            href: ec_responses_55.html
 
 
         - text: "Family conflict module"
@@ -504,6 +533,12 @@ navbar:
           - text: "CC.DEBT.006: What would you like your policymakers to know about your debt, including the debt you’ve accrued during the pandemic?" 
             href: cc_bigram_13.html
 
+        - text: "Multigenerational family module"
+          menu:
+
+          - text: "CC.Fam.003: Please describe the caretaking you do for members of your household other than your children."                                                                                                                                                                                                                                                
+            href: cc_bigram_40.html
+
 
         - text: "Family conflict module"
           menu:
@@ -663,7 +698,12 @@ navbar:
 
           - text: "CC.DEBT.006: What would you like your policymakers to know about your debt, including the debt you’ve accrued during the pandemic?" 
             href: cc_responses_13.html
+            
+        - text: "Multigenerational family module"
+          menu:
 
+          - text: "CC.Fam.003: Please describe the caretaking you do for members of your household other than your children."                                                                                                                                                                                                                                                
+            href: cc_responses_40.html
 
         - text: "Family conflict module"
           menu:
