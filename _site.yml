@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Household Bigram Plots"
       menu: 
-        - text: "Open-ended 1-13 questions"
+        - text: "Open-ended 1-20 questions"
           menu:
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
             href: ec_bigram_1.html
@@ -50,6 +50,18 @@ navbar:
             
           - text: "OPEN.016: Are there additional supports or services that would help you to be the kind of parent you most want to be? If so, please describe."  
             href: ec_bigram_54.html
+            
+          - text: "OPEN.017: As a parent, what are the long-term goals that you have for your child(ren) in areas such as school, friends, money, future career, or any other area?"  
+            href: ec_bigram_58.html
+
+          - text: "OPEN.018: Are there supports or services that you currently rely upon that are helpful in achieving your long-term goals for your child(ren)?"  
+            href: ec_bigram_59.html
+            
+          - text: "OPEN.019: What sorts of additional supports or services would be most helpful to assist you in achieving your long-term goals for your children?"  
+            href: ec_bigram_60.html
+            
+          - text: "OPEN.020: What are ways you know whether your child age 3 or under is doing really well or thriving?"  
+            href: ec_bigram_61.html
 
 
         - text: "COVID module"
@@ -151,6 +163,15 @@ navbar:
           
           - text: "JOB.040: Why did your return to working remotely?" 
             href: ec_bigram_44.html
+            
+        - text: "JVQ module"
+          menu:
+          
+          - text: "JVQ.004: What strategies do you think we should use as a country to address gun violence?" 
+            href: ec_bigram_56.html
+            
+          - text: "JVQ.005: In what ways, if any, has gun violence impacted decisions you make about activities for your child(ren) and your family?" 
+            href: ec_bigram_57.html
           
         - text: "Material hardship module"
           menu:
@@ -210,6 +231,12 @@ navbar:
 
           - text: "STIM.005.d: (If receive the unemployment bonus)  In what ways was the $300 unemployment bonus/benefit from related to COVID-19 helpful?  "  
             href: ec_bigram_35.html
+            
+        - text: "TRUST module"
+          menu:
+
+          - text: "TRUST.005: Please say more about what makes these places in your community your favorite and least favorite."
+            href: ec_bigram_62.html
 
         - text: "Workforce module"
           menu:
@@ -232,7 +259,7 @@ navbar:
 
     - text: "Household Response Tables"
       menu: 
-        - text: "Open-ended 1-13 questions"
+        - text: "Open-ended 1-20 questions"
           menu:
 
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
@@ -279,6 +306,18 @@ navbar:
             
           - text: "OPEN.016: Are there additional supports or services that would help you to be the kind of parent you most want to be? If so, please describe."  
             href: ec_responses_54.html
+
+          - text: "OPEN.017: As a parent, what are the long-term goals that you have for your child(ren) in areas such as school, friends, money, future career, or any other area?"  
+            href: ec_responses_58.html
+
+          - text: "OPEN.018: Are there supports or services that you currently rely upon that are helpful in achieving your long-term goals for your child(ren)?"  
+            href: ec_responses_59.html
+            
+          - text: "OPEN.019: What sorts of additional supports or services would be most helpful to assist you in achieving your long-term goals for your children?"  
+            href: ec_responses_60.html
+            
+          - text: "OPEN.020: What are ways you know whether your child age 3 or under is doing really well or thriving?"  
+            href: ec_responses_61.html
 
 
 
@@ -383,6 +422,15 @@ navbar:
 
           - text: "JOB.040: Why did your return to working remotely?" 
             href: ec_responses_44.html
+            
+        - text: "JVQ module"
+          menu:
+          
+          - text: "JVQ.004: What strategies do you think we should use as a country to address gun violence?" 
+            href: ec_responses_56.html
+            
+          - text: "JVQ.005: In what ways, if any, has gun violence impacted decisions you make about activities for your child(ren) and your family?" 
+            href: ec_responses_57.html
 
 
         - text: "Material hardship module"
@@ -444,6 +492,11 @@ navbar:
           - text: "STIM.005.d: (If receive the unemployment bonus) In what ways was the $300 unemployment bonus/benefit from related to COVID-19 helpful? "  
             href: ec_responses_35.html
 
+        - text: "TRUST module"
+          menu:
+
+          - text: "TRUST.005: Please say more about what makes these places in your community your favorite and least favorite."
+            href: ec_responses_62.html
 
         - text: "Workforce module"
           menu:
@@ -466,7 +519,7 @@ navbar:
 
     - text: "Provider Bigram Plots"
       menu: 
-        - text: "Open-ended 1-8 questions"
+        - text: "Open-ended 1-11 questions"
           menu:
           - text: "CC.OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
             href: cc_bigram_1.html
@@ -633,7 +686,7 @@ navbar:
 
     - text: "Provider Response Tables"
       menu: 
-        - text: "Open-ended 1-8 questions"
+        - text: "Open-ended 1-11 questions"
           menu:
           - text: "CC.OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
             href: cc_responses_1.html

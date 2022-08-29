@@ -53,7 +53,8 @@ ec_response_table = ec_master %>%
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022, 
            POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, 
            CLIM.012, 
-           OPEN.014, OPEN.015, OPEN.016, Fam.003, # NEW VARIABLE
+           OPEN.014, OPEN.015, OPEN.016, Fam.003, 
+           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, # NEW VARIABLE
            State, FPL.2019.150, zip, Language,
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
@@ -70,7 +71,8 @@ ec_response_table = ec_master %>%
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d, WKFORCE.011,
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
            POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012, 
-           OPEN.014, OPEN.015, OPEN.016, Fam.003) %>%
+           OPEN.014, OPEN.015, OPEN.016, Fam.003,
+           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005) %>%
     filter(Response != "") 
 
 
@@ -80,12 +82,13 @@ ec_questions = ec_master %>%
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d, STIM.004.d, STIM.005.d,  WKFORCE.011,
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
            POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012,
-           OPEN.014, OPEN.015, OPEN.016, Fam.003) %>% 
+           OPEN.014, OPEN.015, OPEN.016, Fam.003,
+           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005) %>% 
     select(-OPEN.006)
 ec_q_text = sjlabelled::get_label(ec_questions)
 ec_q_names = names(ec_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-ec_q_nums = seq(1, 55)
+ec_q_nums = seq(1, 62)
 #rm(questions)
 
 ## Matching cc data with zipcode and clean 
