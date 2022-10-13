@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Household Bigram Plots"
       menu: 
-        - text: "Open-ended 1-20 questions"
+        - text: "Open-ended module questions"
           menu:
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
             href: ec_bigram_1.html
@@ -62,6 +62,15 @@ navbar:
             
           - text: "OPEN.020: What are ways you know whether your child age 3 or under is doing really well or thriving?"  
             href: ec_bigram_61.html
+            
+          - text: "OPEN.021: As a parent, what are the highest priorities for your family right now?"  
+            href: ec_bigram_63.html
+            
+          - text: "OPEN.022: Are there supports or services that you currently find most helpful for your family? If so, please describe."  
+            href: ec_bigram_64.html
+            
+          - text: "OPEN.023: Are there additional supports or services not currently available that would be helpful to your family? If so, please describe."  
+            href: ec_bigram_65.html            
 
 
         - text: "COVID module"
@@ -259,7 +268,7 @@ navbar:
 
     - text: "Household Response Tables"
       menu: 
-        - text: "Open-ended 1-20 questions"
+        - text: "Open-ended module questions"
           menu:
 
           - text: "OPEN.001: What are the biggest challenges and concerns for you and your family right now?" 
@@ -319,7 +328,14 @@ navbar:
           - text: "OPEN.020: What are ways you know whether your child age 3 or under is doing really well or thriving?"  
             href: ec_responses_61.html
 
-
+          - text: "OPEN.021: As a parent, what are the highest priorities for your family right now?"  
+            href: ec_responses_63.html
+            
+          - text: "OPEN.022: Are there supports or services that you currently find most helpful for your family? If so, please describe."  
+            href: ec_responses_64.html
+            
+          - text: "OPEN.023: Are there additional supports or services not currently available that would be helpful to your family? If so, please describe."  
+            href: ec_responses_65.html  
 
         - text: "COVID module"
           menu:
