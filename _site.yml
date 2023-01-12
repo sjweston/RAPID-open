@@ -108,6 +108,15 @@ navbar:
 
           - text: "CLIM.012. Ideally, what do you see your role and responsibility being in regard to supporting your child(ren) through climate change?"                                                                                                                                                                                                                                                                                                               
             href: ec_bigram_51.html
+
+          - text: "CLIM.017. How does the environment around your home (i.e. air quality, water quality, proximity to parks, etc.) affect your family?"                                                                                                                                                                                                                                                                                                               
+            href: ec_bigram_66.html
+
+          - text: "CLIM.019. Please describe how you involve your child(ren) in activities that support environmental sustainability."                                                                                                                                                                                                                                                                                                               
+            href: ec_bigram_67.html
+
+          - text: "CLIM.020. In what ways do you spend time in nature with your child(ren)?"                                                                                                                                                                                                                                                                                                               
+            href: ec_bigram_68.html
           
 
         - text: "Debt module"
@@ -372,6 +381,15 @@ navbar:
 
           - text: "CLIM.012. Ideally, what do you see your role and responsibility being in regard to supporting your child(ren) through climate change?"                                                                                                                                                                                                                                                                                                               
             href: ec_responses_51.html
+
+          - text: "CLIM.017. How does the environment around your home (i.e. air quality, water quality, proximity to parks, etc.) affect your family?"                                                                                                                                                                                                                                                                                                               
+            href: ec_responses_66.html
+
+          - text: "CLIM.019. Please describe how you involve your child(ren) in activities that support environmental sustainability."                                                                                                                                                                                                                                                                                                               
+            href: ec_responses_67.html
+
+          - text: "CLIM.020. In what ways do you spend time in nature with your child(ren)?"                                                                                                                                                                                                                                                                                                               
+            href: ec_responses_68.html
 
 
 

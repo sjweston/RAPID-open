@@ -14,6 +14,9 @@ master_2021 <- read_sav(here("data/MasterFile_groupings_2021.sav"))
 master_2022 <- read_sav(here("data/MasterFile_groupings_2022.sav"))
 cc_master <- read_sav(here("data/CC.MasterFile_groupings.sav"))
 
+cc_master <- cc_master %>%
+    rename (Week = WEEK)
+
 ec_master <- full_join(full_join (master_2020, master_2021), master_2022)
 rm(master_2020, master_2021)
 
@@ -50,12 +53,9 @@ ec_response_table = ec_master %>%
     select(CaregiverID, Week, OPEN.001, OPEN.002, OPEN.003, OPEN.004, OPEN.005, OPEN.006, OPEN.007, OPEN.008, OPEN.009, OPEN.010,
            COVID.007, COVID.008, CTAX.008, CTAX.016, DEBT.005, DEBT.006, FamCon.016, FamCon.017, FamCon.018, GRAND.016, HEALTH.024, 
            HEALTH.030, JOB.030, MH.013, MH.014, POLICY.030, PREG.028, PREG.029, PREG.038, PREG.040, PREG.044, STIM.001.d, STIM.002.d, STIM.003.d,STIM.004.d, STIM.005.d, WKFORCE.011, 
-           OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022, 
-           POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, 
-           CLIM.012, 
-           OPEN.014, OPEN.015, OPEN.016, Fam.003, 
-           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, 
-           OPEN.021, OPEN.022, OPEN.023, # NEW VARIABLE
+           OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022, POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, 
+           CLIM.012, OPEN.014, OPEN.015, OPEN.016, Fam.003, JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, OPEN.021, OPEN.022, OPEN.023, 
+           CLIM.017, CLIM.019, CLIM.020, # NEW VARIABLE
            State, FPL.2019.150, zip, Language,
            RaceGroup, CaregiverAge, child_age03) %>%
     filter(OPEN.006 == 1) %>%
@@ -73,7 +73,7 @@ ec_response_table = ec_master %>%
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
            POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012, 
            OPEN.014, OPEN.015, OPEN.016, Fam.003,
-           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, OPEN.021, OPEN.022, OPEN.023) %>%
+           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, OPEN.021, OPEN.022, OPEN.023, CLIM.017, CLIM.019, CLIM.020 ) %>%
     filter(Response != "") 
 
 
@@ -84,12 +84,12 @@ ec_questions = ec_master %>%
            OPEN.011, POLICY.033, NEEDS.007, WIC.009, CTAX.022,
            POLICY.036, FSTR.008, JOB.040.a, HEALTH.038, OPEN.012, OPEN.013, CTAX.026, CLIM.002, CLIM.004, CLIM.012,
            OPEN.014, OPEN.015, OPEN.016, Fam.003,
-           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, OPEN.021, OPEN.022, OPEN.023) %>% 
+           JVQ.004, JVQ.005, OPEN.017, OPEN.018, OPEN.019, OPEN.020, TRUST.005, OPEN.021, OPEN.022, OPEN.023, CLIM.017, CLIM.019, CLIM.020) %>% 
     select(-OPEN.006)
 ec_q_text = sjlabelled::get_label(ec_questions)
 ec_q_names = names(ec_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-ec_q_nums = seq(1, 65)
+ec_q_nums = seq(1, 68)
 #rm(questions)
 
 ## Matching cc data with zipcode and clean 
