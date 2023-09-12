@@ -12,15 +12,33 @@ library(dplyr)
 master_2020 <- read_sav(here("data/MasterFile_groupings_2020.sav"))
 master_2021 <- read_sav(here("data/MasterFile_groupings_2021.sav"))
 master_2022 <- read_sav(here("data/MasterFile_groupings_2022.sav"))
-cc_master <- read_sav(here("data/CC.MasterFile_groupings.sav"))
+master_2023 <- read_sav(here("data/MasterFile_groupings_2023.sav"))
+cc_master_2021 <- read_sav(here("data/CC.MasterFile_groupings_2021.sav"))
+cc_master_2022 <- read_sav(here("data/CC.MasterFile_groupings_2022.sav"))
+cc_master_2023 <- read_sav(here("data/CC.MasterFile_groupings_2023.sav"))
 
-cc_master <- cc_master %>%
-    rename (Week = WEEK)
+cc_master_2023 <- cc_master_2023 %>%
+    select (-RaceGroup)
 
-ec_master <- full_join(full_join (master_2020, master_2021), master_2022)
-rm(master_2020, master_2021)
+ec_master <- full_join(full_join(full_join (master_2020, master_2021), master_2022), master_2023)
+rm(master_2020, master_2021, master_2022, master_2023)
 
+cc_master <- full_join(full_join (cc_master_2021, cc_master_2022), cc_master_2023)
+rm(cc_master_2021, cc_master_2022, cc_master_2023)
 
+master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-EC/RAPID-EC_Restricted_Master.sav")
+
+master_restricted <- master_restricted %>%
+    select (CaregiverID, DEMO.001)
+
+ec_master <- merge (x = ec_master, y = master_restricted, by = "CaregiverID", all.x = T)
+
+cc_master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-CC/RAPID-CC_Restricted_Master.sav")
+cc_master_restricted <- cc_master_restricted %>%
+    select (ProviderID, CC.DEMO.001)
+
+# Merge master files with restricted data
+cc_master <- merge (x = cc_master, y = cc_master_restricted, by = "ProviderID", all.x = T)
 
 # clean data --------------------------------------------------------------
 
@@ -106,7 +124,7 @@ cc_response_table = cc_master %>%
                                   UserLanguage == "SPA" ~ "Spanish")) %>%
     select(ProviderID, Week, CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.007, CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
-           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1, CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
+           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003,  CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
            CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002, 
            CC.Fam.003,# NEW VARIABLES
            State, FPL.2019.150, zip, RaceGroup, provider_type, Language) %>%
@@ -120,7 +138,7 @@ cc_response_table = cc_master %>%
     rename(`Below 1.5xFPL` = FPL.2019.150) %>%
     gather("Question", "Response", CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
-           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1,
+           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, 
            CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
            CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002, CC.Fam.003) %>%
     filter(Response != "") 
@@ -129,14 +147,14 @@ cc_response_table = cc_master %>%
 cc_questions = cc_master %>% 
     select(CC.OPEN.001, CC.OPEN.002, CC.OPEN.003, CC.OPEN.004, CC.OPEN.005, CC.OPEN.006, CC.OPEN.007,CC.OPEN.008, 
            CC.CCS.004, CC.CCS.005, CC.CTAX.008, CC.CTAX.016, CC.DEBT.005, CC.DEBT.006, CC.FamCon.016, CC.FamCon.017, CC.FamCon.018, CC.MH.013, CC.SF.010, CC.Staff.009, 
-           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, CC.VACC.003.1,
+           CC.STIM.001.d, CC.STIM.002.d, CC.STIM.003.d, CC.STIM.004.d, CC.STIM.005.d, CC.WellB.002, CC.VACC.003, 
            CC.OPEN.009, CC.OPEN.010, CC.OPEN.011,
            CC.Access.002, CC.CTAX.029, CC.FoodAid.002, CC.FoodAid.005, CC.FoodAid.007, CC.HEALTH.039, CC.Inflation.004, CC.ProvDebt.007, CC.Violence.002, CC.Fam.003) %>% 
     select(-CC.OPEN.007)
 cc_q_text = sjlabelled::get_label(cc_questions)
 cc_q_names = names(cc_questions)
 #q_nums = as.numeric(str_remove(q_names, "OPEN."))
-cc_q_nums = seq(1, 40)
+cc_q_nums = seq(1, 39)
 #rm(questions)
 
 # loop bigram  ------------------------------------------------------------
