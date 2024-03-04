@@ -13,32 +13,34 @@ master_2020 <- read_sav(here("data/MasterFile_groupings_2020.sav"))
 master_2021 <- read_sav(here("data/MasterFile_groupings_2021.sav"))
 master_2022 <- read_sav(here("data/MasterFile_groupings_2022.sav"))
 master_2023 <- read_sav(here("data/MasterFile_groupings_2023.sav"))
+master_2024 <- read_sav(here("data/MasterFile_groupings_2024.sav"))
 cc_master_2021 <- read_sav(here("data/CC.MasterFile_groupings_2021.sav"))
 cc_master_2022 <- read_sav(here("data/CC.MasterFile_groupings_2022.sav"))
 cc_master_2023 <- read_sav(here("data/CC.MasterFile_groupings_2023.sav"))
+cc_master_2024 <- read_sav(here("data/CC.MasterFile_groupings_2024.sav"))
 
-cc_master_2023 <- cc_master_2023 %>%
-    select (-RaceGroup)
+#cc_master_2023 <- cc_master_2023 %>%
+#    select (-RaceGroup)
 
-ec_master <- full_join(full_join(full_join (master_2020, master_2021), master_2022), master_2023)
+ec_master <- full_join(full_join(full_join(full_join (master_2020, master_2021), master_2022), master_2023), master_2024)
 rm(master_2020, master_2021, master_2022, master_2023)
 
-cc_master <- full_join(full_join (cc_master_2021, cc_master_2022), cc_master_2023)
+cc_master <- full_join(full_join(full_join (cc_master_2021, cc_master_2022), cc_master_2023), master_2024)
 rm(cc_master_2021, cc_master_2022, cc_master_2023)
 
-master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-EC/RAPID-EC_Restricted_Master.sav")
+#master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-EC/RAPID-EC_Restricted_Master.sav")
 
-master_restricted <- master_restricted %>%
-    select (CaregiverID, DEMO.001)
+#master_restricted <- master_restricted %>%
+#    select (CaregiverID, DEMO.001)
 
-ec_master <- merge (x = ec_master, y = master_restricted, by = "CaregiverID", all.x = T)
+#ec_master <- merge (x = ec_master, y = master_restricted, by = "CaregiverID", all.x = T)
 
-cc_master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-CC/RAPID-CC_Restricted_Master.sav")
-cc_master_restricted <- cc_master_restricted %>%
-    select (ProviderID, CC.DEMO.001)
+#cc_master_restricted <- read_sav ("/Users/sihongl/Library/CloudStorage/GoogleDrive-sihongl@stanford.edu/Shared drives/RAPID Restricted/Restricted Master Files/RAPID-CC/RAPID-CC_Restricted_Master.sav")
+#cc_master_restricted <- cc_master_restricted %>%
+#   select (ProviderID, CC.DEMO.001)
 
 # Merge master files with restricted data
-cc_master <- merge (x = cc_master, y = cc_master_restricted, by = "ProviderID", all.x = T)
+#cc_master <- merge (x = cc_master, y = cc_master_restricted, by = "ProviderID", all.x = T)
 
 # clean data --------------------------------------------------------------
 
@@ -59,7 +61,7 @@ ZipCodes_r <- ZipCodes %>%
 
 ## Matching ec data with zipcode and clean 
 ec_response_table = ec_master %>%
-    rename(zip = DEMO.001) %>%
+    mutate(zip = as.character(DEMO.001)) %>%
     left_join(select(ZipCodes_r, zip, State)) %>%
     #filter(UserLanguage == "EN") %>%
     mutate(child_age03 = case_when(
@@ -112,7 +114,7 @@ ec_q_nums = seq(1, 68)
 
 ## Matching cc data with zipcode and clean 
 cc_response_table = cc_master %>%
-    rename(zip = CC.DEMO.001) %>%
+    mutate(zip = as.character(CC.DEMO.001) )%>%
     left_join(select(ZipCodes_r, zip, State)) %>%
    # filter(UserLanguage == "EN") %>%
     mutate (provider_type = case_when (CC.DEMO.013_1 == 1 ~ "Center teacher", 
